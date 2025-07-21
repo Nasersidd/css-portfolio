@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS & JavaScript Portfolio Practice</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Link JavaScript file with defer -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <h1>Welcome to My Portfolio</h1>
+    </header>
+
+    <section class="intro">
+        <h2>Introduction</h2>
+        <p>This page demonstrates interactive JavaScript features and user-friendly design!</p>
+    </section>
+
+    <!-- Project Gallery Section -->
+    <section class="grid-section">
+        <h2>Portfolio</h2>
+        <div class="grid-container">
+            <div class="grid-item">
+                <strong>Project 1</strong>
+                <button class="toggle-details-btn">Show Details</button>
+                <div class="project-details" style="display:none;">
+                    <p>Details about Project 1. Built using HTML, CSS, and JavaScript for interactivity.</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <strong>Project 2</strong>
+                <button class="toggle-details-btn">Show Details</button>
+                <div class="project-details" style="display:none;">
+                    <p>Details about Project 2. Fully responsive and visually engaging.</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <strong>Project 3</strong>
+                <button class="toggle-details-btn">Show Details</button>
+                <div class="project-details" style="display:none;">
+                    <p>Details about Project 3. Uses Chart.js to visualize skills.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="positioning-section">
+        <h2>Contact Me</h2>
+        <div class="relative-container">
+            <form id="contactForm" novalidate>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <span class="error" id="nameError"></span>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <span class="error" id="emailError"></span>
+                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                <span class="error" id="messageError"></span>
+                <button type="submit">Send Message</button>
+                <div id="formSuccess" style="color:green;"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Skills Chart Section (Bonus) -->
+    <section>
+        <h2>My Skills</h2>
+        <canvas id="skillsChart" width="400" height="200"></canvas>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 My Portfolio Page. All rights reserved.</p>
+    </footer>
+
+    <!-- Chart.js CDN for Bonus Skills Chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
