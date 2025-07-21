@@ -1,0 +1,177 @@
+/* CSS VARIABLES */
+:root {
+  --main-color: #3a3a3a;
+  --accent-color: #6ab04c;
+  --bg-light: #f5f6fa;
+  --font-big: 24px;
+  --font-mid: 18px;
+  --font-small: 14px;
+  --spacing: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background: var(--bg-light);
+  color: var(--main-color);
+  padding-top: 60px;
+}
+
+/* HEADER */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--main-color);
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  z-index: 100;
+}
+
+/* INTRO */
+.intro {
+  text-align: center;
+  padding: var(--spacing);
+}
+
+.intro h2 {
+  font-size: var(--font-big);
+  margin-bottom: 10px;
+}
+
+.intro p {
+  font-size: var(--font-mid);
+}
+
+/* FLEXBOX SECTION */
+.flexbox-section {
+  padding: var(--spacing);
+  background: white;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.flex-item {
+  background: var(--accent-color);
+  color: white;
+  padding: var(--spacing);
+  flex: 1 1 calc(33.333% - 20px);
+  min-width: 200px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.flex-item:hover {
+  filter: brightness(0.92);
+}
+
+/* GRID SECTION */
+.grid-section {
+  padding: var(--spacing);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.grid-item {
+  background: white;
+  padding: var(--spacing);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  transition: border-color 0.2s;
+}
+.grid-item:hover {
+  border-color: var(--accent-color);
+}
+
+/* POSITIONING SECTION */
+.positioning-section {
+  padding: var(--spacing);
+}
+
+.relative-container {
+  position: relative;
+  background: white;
+  padding: var(--spacing);
+  border-radius: 6px;
+}
+
+.absolute-box {
+  position: absolute;
+  left: 0;
+  background: var(--main-color);
+  color: white;
+  padding: 8px;
+  font-size: var(--font-small);
+  border-radius: 0 0 5px 0;
+  width: 250px;
+}
+
+/* FOOTER */
+.footer {
+  background: var(--main-color);
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 40px;
+  animation: fadeIn 0.5s ease-in-out;
+  animation-delay: 0.5s;
+}
+.footer p {
+  margin: 0;
+  font-size: var(--font-small);
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+  .flex-item {
+    flex: 1 1 calc(50% - 20px);
+  }
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 480px) {
+  .flex-item {
+    flex: 1 1 100%;
+  }
+  .absolute-box {
+    font-size: var(--font-small);
+    padding: 6px;
+  }
+  .intro h2 {
+    font-size: var(--font-mid);
+  }
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.intro, .flexbox-section, .grid-section, .positioning-section {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* HOVER EFFECTS */
+.footer a {
+  color: white;
+  text-decoration: underline;
+}
+.footer a:hover {
+  color: var(--accent-color);
+}
